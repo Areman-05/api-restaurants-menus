@@ -1,0 +1,43 @@
+### API restaurants & menus
+### Arranca: pnpm dev   (o npm run dev)
+@baseUrl = http://127.0.0.1:3000
+
+### Health
+GET {{baseUrl}}/health
+
+### Listar restaurants
+GET {{baseUrl}}/restaurants
+
+### Un restaurant (cambia el id)
+GET {{baseUrl}}/restaurants/ID_AQUI
+
+### Menus de un restaurant
+GET {{baseUrl}}/restaurants/ID_AQUI/menus
+
+### Listar menus
+GET {{baseUrl}}/menus
+
+### Un menu
+GET {{baseUrl}}/menus/ID_AQUI
+
+### Crear restaurant
+POST {{baseUrl}}/restaurants
+Content-Type: application/json
+
+{
+  "name": "Nuevo Rest",
+  "city": "Sevilla",
+  "cuisine": "Andaluza",
+  "rating": 4.0
+}
+
+### Crear menu (usa un restaurantId real)
+POST {{baseUrl}}/menus
+Content-Type: application/json
+
+{
+  "restaurantId": "ID_AQUI",
+  "name": "Menu degustacion",
+  "price": 35,
+  "dishes": ["Entrante", "Principal", "Postre"]
+}
